@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import ru.netology.web.data.DataHelper;
 import ru.netology.web.page.DashboardPage;
 import ru.netology.web.page.LoginPage;
+import ru.netology.web.page.MoneyTransferCard;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -67,7 +68,7 @@ class MoneyTransferTest {
         int secondBalanceFirstCard = dashboardPage.getCardBalance("0");
         int secondBalanceSecondCard = dashboardPage.getCardBalance("1");
 
-        assertEquals(secondBalanceFirstCard, firstBalanceFirstCard - value);
-        assertEquals(secondBalanceSecondCard, firstBalanceSecondCard + value);
+        var moneyTransferCard = new MoneyTransferCard();
+        moneyTransferCard.messageError();
     }
 }
